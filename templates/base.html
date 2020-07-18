@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SARGAM</title>
+    <link rel="shortcut icon" href="#" />
+    <!-- To get rid of favicon.ico 404 error -->
+    <!-- <link rel="stylesheet" type="text/css" href="/static/style.css" /> -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='stylesheets/style.css') }}"
+    />
+
+    <link
+      href="https://getbootstrap.com/docs/4.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+
+    <script type="text/javascript" src="/static/jquery-1.7.1.min.js"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-dark bg-dark">
+      <a class="navbar-brand">SARGAM</a>
+      <div class="nav-inline">
+        <a class="navbar-brand" href="/">Home</a>
+        <a class="navbar-brand" href="/about">About</a>
+        <a class="navbar-brand" href="/team">Our Team</a>
+      </div>
+    </nav>
+    <div id="content">
+      {% block body %}{% endblock %}
+    </div>
+  </body>
+</html>
