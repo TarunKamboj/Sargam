@@ -10,7 +10,7 @@ from io import BytesIO
 import base64
 
 app = flask.Flask(__name__)
-app.secret_key = "Hello World!"
+app.secret_key = "Secret Key"
 
 songs = list()
 
@@ -36,7 +36,7 @@ def index():
 
 
 @app.route('/hook', methods=['POST'])
-def get_image():
+def getImage():
     # convert base64 image and save it
     image_b64 = request.values['imageBase64']
     image_data = re.sub('^data:image/.+;base64,', '', image_b64)
@@ -56,7 +56,7 @@ def get_image():
 
 
 @app.route('/graph')
-def get_graph():
+def getGraph():
     # draw emotion grid
     get_emotion_grid()
     # songs = get_playlist()
